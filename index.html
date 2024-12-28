@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پلیر فیلم آنلاین</title>
+    <link href="https://vjs.zencdn.net/7.18.1/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="overlay" style="display: flex;">
+        <div id="urlPrompt">
+            <input type="url" id="videoURL" placeholder="لینک ویدیو را وارد کنید" required>
+            <button id="submitURL">تایید</button>
+        </div>
+    </div>
+    <div id="player-container">
+        <video id="my-video" class="video-js" controls preload="auto">
+            <source src="" type="application/x-mpegURL">
+            Your browser does not support HTML5 video.
+        </video>
+        
+        <div id="controls">
+            <select id="audioTracks">
+                <option value="none">انتخاب صدا</option>
+            </select>
+            <select id="subtitles">
+                <option value="none">انتخاب زیرنویس</option>
+            </select>
+            <button id="syncSubtitles">همگام‌سازی زیرنویس</button>
+            <input type="number" id="preloadBuffer" value="30" min="5" max="180"> ثانیه برای دانلود پیش‌دستانه
+        </div>
+    </div>
+
+    <script src="https://vjs.zencdn.net/7.18.1/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="player.js"></script>
+</body>
+</html>
